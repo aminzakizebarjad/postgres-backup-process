@@ -3,7 +3,7 @@
 We were running a thingsboard-ce docker based installation on a private cloud provider.  
 Unfortunatly we lost all of data in postgresql and cassandra.  
 At that moment the write and read rate was high with a cpu load of 70%.  
-I just downed a single container and saw that many of the containers were recreated in an unknown manner.  
+I just downed a single container, after recreating that many of other containers were recreated in an unwilling manner.  
 After that we were having a problem in thingsboard core logs which were relevant to a table that was trying to find from the relational database.  
 We checked out the size of the database folders and it was suprisingly low in size.  
 We understood that we have stocked into a disaster.  
@@ -18,3 +18,10 @@ I found that one of my colleagues partnering me in maintaning servers have reque
 I checked on the problem on the net and it stated that this could be the reason the problem happened.  
 But to this date we found no other reasons.  
 
+## About the bash script  
+
+Contains 4 functions  
+1. get_params  
+2. create_backup   
+3. remove_previous_backup  
+4. transfer_to_bu_server
