@@ -37,7 +37,10 @@ Contains 4 functions
 this function takes all parameters that you need to put this bash script into funciton.  
 if you give less parameters than expected then this will give user some Error folowing the proper usage.  
 the **usage** will be like below  
-<code>pg_backup_process.sh --tb_dir [directory where thingsboard is cloned] --db_dir [directrory of where postgresql database saves data] --bu_user [the user on backup server] --bu_ip [backup server ip address] --bu_dir [where in backup server the backup resides] --bu_key [the ssh key to connect to backup server]</code>  
+```
+pg_backup_process.sh --tb_dir [directory where thingsboard is cloned] --db_dir [directrory of where postgresql database saves data] --bu_user [the user on backup server] --bu_ip [backup server ip address] --bu_dir [where in backup server the backup resides] --bu_key [the ssh key to connect to backup server]
+```  
+
 
 
  
