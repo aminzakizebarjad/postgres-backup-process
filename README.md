@@ -6,6 +6,8 @@ With this script You will be available to back up a postgresql database which is
 Every time you dump a database in a new backup the previous backups will be removed based on a sort that is done over backup files.  
 Backups are created with the datetime as appendix of backup file name.  
 Upcoming procedure will be to transfer the dumped backup into the backup server.  
+
+### Assumptions 
 Backup server's ssh private key must be available on the Host (notice that the ssh keys are specific to each user).  
 It's assumed that you know the Backup server IP and the user that handles the transfer on that backup server. Also it is assumed that
 the targert transfer directory exists on backup server and belongs to the target user.  
