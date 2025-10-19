@@ -1,6 +1,11 @@
 # Backing up Postgresql  
 
-## The crash on server  
+## Procedure explaination  
+
+in this
+## The Story  
+
+### The crash on server  
 
 We were running a thingsboard-ce docker based installation on a private cloud provider.  
 Unfortunatly we lost all of data in postgresql and cassandra.  
@@ -14,7 +19,7 @@ The first two belonged to our own company but the third belonged to our partner 
 So we get to the point of creating a server for holding up our database backups.  
 In this repo we have a bash script that must run on the server were the thingsboards is being installed.  
 
-## Reasons that the disaster happened  
+### Reasons that the disaster happened  
 
 I found that one of my colleagues partnering me in maintaning servers have requested a snapshot dating back in 3 month.  
 I checked on the problem on the net and it stated that this could be the reason the problem happened.  
@@ -32,6 +37,7 @@ Contains 4 functions
 this function takes all parameters that you need to put this bash script into funciton.  
 if you give less parameters than expected then this will give user some Error folowing the proper usage.  
 the **usage** will be like below  
-`pg_backup_process.sh --tb_dir [directory where thingsboard is cloned] --db_dir [directrory of where postgresql database saves data] --bu_user [the user on backup server] --bu_ip [backup server ip address] --bu_dir [where in backup server the backup resides] --bu_key [the ssh key to connect to backup server]`  
+<code>pg_backup_process.sh --tb_dir [directory where thingsboard is cloned] --db_dir [directrory of where postgresql database saves data] --bu_user [the user on backup server] --bu_ip [backup server ip address] --bu_dir [where in backup server the backup resides] --bu_key [the ssh key to connect to backup server]</code>  
+
 
  
