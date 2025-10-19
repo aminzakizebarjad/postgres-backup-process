@@ -2,7 +2,7 @@
 
 ## Procedure explaination  
 
-With this script You will be available to back up a postgresql database which is being ran via docker as running container.  
+With this script You will be available to back up a **postgresql database** which is being ran via docker as **running container**.  
 Every time you dump a database in a new backup the previous backups will be removed based on a sort that is done over backup files.  
 Backups are created with the datetime as appendix of backup file name.  
 Upcoming procedure will be to transfer the dumped backup into the backup server.  
