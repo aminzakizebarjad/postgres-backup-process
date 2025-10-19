@@ -1,5 +1,7 @@
 # Backing up Postgresql  
 
+## The crash on server  
+
 We were running a thingsboard-ce docker based installation on a private cloud provider.  
 Unfortunatly we lost all of data in postgresql and cassandra.  
 At that moment the write and read rate was high with a cpu load of 70%.  
