@@ -2,7 +2,12 @@
 
 ## Procedure explaination  
 
-in this
+With this script You will be available to back up a postgresql database which is being ran via docker as running container.  
+Every time you dump a database in a new backup the previous backups will be removed based a sort that is done over backup files.  
+Backups are created with the dateTime at the back of thair names.  
+Upcoming procedure will be to transfer the dumped backup into the backup server.  
+Backup server's ssh private key must be available on the Host.  
+
 ## The Story  
 
 ### The crash on server  
@@ -14,6 +19,8 @@ I just downed a single container, after recreating that many of other containers
 After that we were having a problem in thingsboard core logs which were relevant to a table that was trying to find from the relational database.  
 We checked out the size of the database folders and it was suprisingly low in size.  
 We understood that we have stocked into a disaster.  
+### What was I up to  
+
 I was doing some tests on the servers and the tests were successful in two servers with a running thingsboard on them. When i reached the third, things messeds up and I found myself in a trouble.  
 The first two belonged to our own company but the third belonged to our partner company.  
 So we get to the point of creating a server for holding up our database backups.  
