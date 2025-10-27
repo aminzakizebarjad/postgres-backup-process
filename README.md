@@ -1,8 +1,21 @@
 # Backing up Postgresql  
 
+## TL;DR;  
+If you are after backing up thingsboard's postgresql and forward it to bu server, when you are runing thingsboard with docker do below  
+'''
+tb_pg_backup_process.sh --tb_dir [the directory where you cloned thingsboard github repo] --db_dir [directrory of where postgresql database saves data]  --container_name [name of docker container that runs postgres inside]  --bu_user [the user on backup server] --bu_ip [backup server ip address] --bu_dir [where in backup server the backup resides] --bu_key [the ssh key to connect to backup server]
+'''  
+notes:  
+do not use the "thingsboard" directory name in --tb_dir parameter, only the directory where thingsboard directory exists.  
+If you need to backup a generic postgresql and forward it to bu server with specific user --bu_user and specific ssh key for that user --bu_key to a directory --bu_dir that --bu_user have access to that, try command below:  
+'''
+ge_pg_backup_process.sh --db_dir [directrory of where postgresql database saves data] --db_name [database name which is being backed up] --container_name [name of docker container that runs postgres inside] --bu_name [the prefix of backup file name] --bu_user [the user on backup server] --bu_ip [backup server ip address] --bu_dir [where in backup server the backup resides] --bu_key [the ssh key to connect to backup server]
+
+'''
+
 ## Procedure explaination  
 
-With this script You will be available to back up a **postgresql database** which is being ran via docker as **running container**.  
+With script **pg_backup_process.sh**  You will be available to back up a **postgresql database** which is being ran via docker as **running container**.  
 Every time you dump a database in a new backup the previous backups will be removed based on a sort that is done over backup files.  
 Backups are created with the datetime as appendix of backup file name.  
 Upcoming procedure will be to transfer the dumped backup into the backup server.  
